@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave Management Form</title>
+    <style>
+      
+      /* Styling the Body element i.e. Color,
+        Font, Alignment */
+      body {
+        background-color: rgb(184, 230, 199);
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      }
+
+      /* Styling the Form (Color, Padding, Shadow) */
+      form {
+        background-color: #fff;
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 30px 20px;
+        /*box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);*/
+      }
+
+      /* Styling form-control Class */
+      .form-control {
+        text-align: left;
+        margin-bottom: 25px;
+      }
+
+
+      /* Styling form-control input,
+        select, textarea */
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px auto;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-bottom: 2px solid black;
+      }
+      input[type="text"],select:focus {
+        outline: none;
+        border-bottom: 2px solid black;
+      }
+      input[type="textarea"],select,textarea,label :focus {
+        border-bottom: 2px solid black;
+      }
+
+      /* Styling form-control Radio
+        button and Checkbox */
+      input[type="radio"] {
+        display: inline-block;
+        width: auto;
+      }
+      input[type="checkbox"] {
+        display: inline;
+      }
+
+      input[type="submit"] {
+        background-color: rgb(196, 190, 190);
+        border: 1px solid #777;
+        border-radius: 2px;
+        font-family: inherit;
+        font-size: 21px;
+        display: block;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+        font-family: sans-serif;
+      }
+      h2 {
+        text-align: center;
+        text-decoration: underline;
+        font-family: sans-serif;
+      }
+      h4 {
+        text-align: center;
+        font-family: sans-serif;
+      }
+      .Text{
+        display:flex;
+        align-items: center;
+      }
+    </style>
+
+    <script>
+      function f1(){
+        if(document.getElementById("fname").value===""){
+          alert("Please enter your first name");
+          return false;
+        }
+        else if(document.getElementById("lname").value===""){
+          alert("Please enter your last name");
+          return false;
+        }
+        else if(document.getElementById("email").value===""){
+          alert("Please enter your email");
+          return false;
+        }
+        else if(document.getElementById("phone").value===""){
+          alert("Please enter your phone number");
+          return false;
+        }
+        else if(document.getElementById("address").value===""){
+          alert("Please enter your address");
+          return false;
+        }
+        else if(document.getElementById("leave").value===""){
+          alert("Please select a leave reason");
+          return false;
+        }
+        else if(document.getElementById("start").value===""){
+          alert("Please enter your leave start date");
+          return false;
+        }
+        else if(document.getElementById("end").value===""){
+          alert("Please enter your leave end date");
+          return false;
+        }
+        else if(document.getElementById("reason").value===""){
+          alert("Please enter your leave reason briefly");
+          return false;
+        }
+        else if(document.getElementById("declare").checked==false){
+          alert("Please check the declaration box");
+          return false;
+        }
+        else{
+          alert("Form is filled up successfully... Thank you!!!!!!");
+        }
+        
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <h1>Leave Management Form</h1>
+    <h2>ABC GROUP PVT. LTD.</h2>
+    <h4>123, SC Road, Kolkata-700098</h4>
+    <h4>Phone: +91-1234567890</h4>
+    <form id="form">
+      <label for="fname"><b>First Name</b></label>
+      <input type="text" id="fname" name="fname" placeholder="First Name" required />
+      <br /><br />
+
+      <label for="lname"><b>Last Name</b></label>
+      <input type="text" id="lname" name="lname" placeholder="Last Name" required />
+      <br /><br />
+
+      <label for="gender"><b>Gender</b></label>
+      <input type="radio" id="male" name="gender" value="male" />
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female" />
+      <label for="female">Female</label>
+      <input type="radio" id="others" name="gender" value="others" />
+      <label for="others">Others</label>
+      <br /><br />
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" id="email" name="email" placeholder="Email" required/>
+      <br /><br />
+
+      <label for="phone"><b>Phone Number</b></label>
+      <input type="text" id="phone" name="phone" placeholder="Phone Number" required />
+      <br /><br />
+
+      <label for="address"><b>Address</b></label>
+      <input type="text" id="address" name="address" placeholder="Address" required/>
+      <br /><br />
+
+      <label for="leave"><b>Leave Reason</b></label>
+      <select id="leave" name="leave" required>
+        <option value="">Select Leave Type</option>
+        <option value="Annual">Annual</option>
+        <option value="Sick">Sick</option>
+        <option value="Maternity">Maternity</option>
+        <option value="Paternity">Paternity</option>
+        <option value="Other">Other</option></select><br /><br />
+
+      <label for="start"><b>Start Date</b></label>
+      <input type="date" id="start" name="start" required /><br /><br />
+      <label for="end"><b>End Date</b></label>
+      <input type="date" id="end" name="end" required /><br /><br />
+
+      <label for="reason"><b>Reason Details</b></label>
+      <textarea
+        id="reason"
+        name="reason"
+        placeholder="Reason for Leave"
+        rows="10"
+        columns="100"
+      ></textarea
+      ><br /><br />
+
+      <label for="declare"><b>Declaration</b></label>
+      <div class="Text">
+      <input type="checkbox" id="declare" name="declare" value="declare" required/>
+      <p>
+        I,hereby,request leave/absence from duty as indicated above and certify
+        that such leave/absenceis requested for the purpose indicated. I
+        understand that falsification on this form may be grounds for
+        disciplinary action.
+      </p>
+      </div>
+
+      <input type="submit" value="Submit" onclick="f1()"/>
+
+    </form>
+  </body>
+</html>
